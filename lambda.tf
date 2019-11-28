@@ -14,8 +14,7 @@ resource "aws_lambda_function" "lambda" {
 
   # Use a generated filename to determine when the source code has changed.
 
-  filename   = data.external.built.result.filename
-  depends_on = [null_resource.archive]
+  filename   = var.source_path
 
   # Add dynamic blocks based on variables.
 
